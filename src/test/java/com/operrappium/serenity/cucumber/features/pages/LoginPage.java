@@ -232,13 +232,13 @@ public class LoginPage extends BasePage {
 //            Thread.sleep(2997);
             withTimeoutOf(5, TimeUnit.SECONDS).waitForPresenceOf(By.id("com.enstage.wibmo.hdfc:id/check_personal_device"));
             this_is_my_personal_device.click();
-            Thread.sleep(999);
+            Thread.sleep(500);
             String xpathSkipBtn = "//*[@text=\"Skip\"]";
             withTimeoutOf(5, TimeUnit.SECONDS).waitForPresenceOf(By.xpath(xpathSkipBtn));
             getDriver().findElement(By.xpath(xpathSkipBtn)).click();
 //        clickButtonUsingClassname("android.widget.Button","Only this time");
 //            Thread.sleep(999);
-            waitForLoadPage();
+//            waitForLoadPage();
         }
     }
 }

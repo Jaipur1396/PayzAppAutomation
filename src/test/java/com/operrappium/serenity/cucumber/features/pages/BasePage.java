@@ -25,6 +25,10 @@ import org.xml.sax.InputSource;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.StringReader;
 
 public class BasePage extends PageObject {
     public static final Logger LOGGER = LoggerFactory.getLogger(BasePage.class);
@@ -590,7 +594,12 @@ public class BasePage extends PageObject {
         InputSource src = new InputSource();
         src.setCharacterStream(new StringReader(xmlResponse));
         Document doc = builder.parse(src);
-        String msgData = doc.getElementsByTagName("messagedata").item(0).getTextContent();
+//        String msgData = doc.getElementsByTagName("messagedata").item(0).getTextContent();
+
+        //new code
+        int msgDataLength = doc.getElementsByTagName("messagedata").getLength();
+        int lastMessage = msgDataLength-1;
+        String msgData = doc.getElementsByTagName("messagedata").item(lastMessage).getTextContent();
 //        String msgData = "Use OTP 676113 to authorize your transaction using PinePerks RuPay Card";
         String cardName = fetchValueFromExcelSheet(index,17);
         if(cardName.equals("Zingoy_Transcop")){

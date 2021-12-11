@@ -25,10 +25,6 @@ import org.xml.sax.InputSource;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.StringReader;
 
 public class BasePage extends PageObject {
     public static final Logger LOGGER = LoggerFactory.getLogger(BasePage.class);

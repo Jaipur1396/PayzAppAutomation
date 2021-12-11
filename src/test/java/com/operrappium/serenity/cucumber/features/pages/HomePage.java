@@ -1123,17 +1123,15 @@ public class HomePage extends BasePage {
         System.out.println("current UserId :"+currentUser +", and current user cardNumber: "+currentUserCardNumber);
         System.out.println("previous UserId :"+previousUser +", and previous user cardNumber: "+previusUserCardNumber);
         withTimeoutOf(10, TimeUnit.SECONDS).waitForPresenceOf(By.xpath("//*[@text=\"Linked cards\"]"));
-        Thread.sleep(1999);
+//        Thread.sleep(999);
         if((currentUser.equals(previousUser)) && (currentUserCardNumber.equals(previusUserCardNumber))){
             //do nothing
         }
         else {
-
             clickButtonUsingClassname("android.widget.TextView", "Linked cards");
             //enter card holder name
             withTimeoutOf(10, TimeUnit.SECONDS).waitForPresenceOf(By.xpath("//*[@text=\"Add Card\"]"));
             waitForLoadPage();
-            Thread.sleep(999);
 
             rowNumber = 1;
             int webViewLength = getDriver().findElements(By.className("android.webkit.WebView")).size();
@@ -1148,7 +1146,7 @@ public class HomePage extends BasePage {
                 pressKeyCode(cardHolderName.charAt(i) + "");
             }
             //move to down arrow
-            Thread.sleep(1999);
+            Thread.sleep(999);
             System.out.println("move to card number field...");
             pressKeyCode("done");
             Thread.sleep(999);

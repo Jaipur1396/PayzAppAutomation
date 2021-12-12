@@ -783,21 +783,24 @@ public class HomePage extends BasePage {
                 String bankName = fetchValueFromExcelSheet(rowNumber, 17);
                 System.out.println("bank name: "+bankName);
                 if (bankName.equals("Zingoy_Transcop")) {
+                    Thread.sleep(2999);
                     System.out.println("entering otp...");
                     pressKeyCode("NEXT");
-//                    System.out.println("Second Move...");
+                    Thread.sleep(500);
+                    System.out.println("Second Move...");
                     pressKeyCode("NEXT");
-//                    System.out.println("third Move...");
+                    Thread.sleep(500);
+                    System.out.println("third Move...");
                     pressKeyCode("NEXT");
-//                    System.out.println("fourth Move...");
+                    Thread.sleep(500);
+                    System.out.println("fourth Move...");
                     pressKeyCode("NEXT");
 
-//                    System.out.println("pressing key..");
                     Thread.sleep(999);
                     int n = bankOTP.length();
                     for (int i = 0; i < n; i++) {
                         System.out.println("digit of otp: " + bankOTP.charAt(i));
-                        Thread.sleep(700);
+                        Thread.sleep(999);
                         char pinByDigit = bankOTP.charAt(i);
                         System.out.println("otp digit " + pinByDigit);
                         String digit = "" + pinByDigit;
